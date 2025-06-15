@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { btsMembers } from "../../data/btsData";
 
 export default function Profile() {
   return (
@@ -11,7 +12,18 @@ export default function Profile() {
       transition={{ duration: 0.5 }}
     >
       <h2>Member Profiles</h2>
-      <p>Here you can explore BTS member profiles.</p>
+      <div className="member-list">
+        {btsMembers.map((member) => (
+          <div key={member.id} className="member-card">
+            <img src={member.photo} alt={member.name} />
+            <h3>
+              {member.name} ({member.realName})
+            </h3>
+            <p>Position: {member.position}</p>
+            <p>Birthday: {member.birthday}</p>
+          </div>
+        ))}
+      </div>
     </motion.div>
   );
 }

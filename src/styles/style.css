@@ -36,3 +36,47 @@
     transform: rotate(360deg);
   }
 }
+
+.trivia {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.options button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #b19cd9;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.options button:hover {
+  transform: scale(1.05);
+}
+
+.score-section button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ff69b4;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s;
+}
+
+.score-section button:hover {
+  transform: scale(1.05);
+}
