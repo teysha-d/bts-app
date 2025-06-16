@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { pageVariants, pageTransition } from "../../animations/pageTransitions";
+import QuoteCarousel from "../QuoteCarousel"; // <-- Add this import
 
 export default function Home() {
   return (
@@ -12,10 +13,14 @@ export default function Home() {
       exit="out"
       transition={pageTransition}
     >
-      <h2>Welcome to the BTS Fan Club</h2>
+      <h2>💜 Welcome to the BTS Fan Club 💜</h2>
       <p>
         🎤 Explore member profiles, trivia games, photo galleries, and more!
       </p>
+
+      {/* Insert the Quote Carousel here */}
+      <QuoteCarousel />
+
       <div className="home-card">
         <h3>🎧 Stay tuned for more fan content, updates & fun!</h3>
       </div>
