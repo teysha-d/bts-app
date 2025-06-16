@@ -10,11 +10,12 @@ export default function Header() {
           <img src={btsLogo} alt="BTS Logo" className="bts-logo" />
           <h1>BTS Fan Club</h1>
         </div>
-        <nav className="header">
+        <nav className="navigation">
           <Link to="/">Home</Link>
           <Link to="/profile">Profiles</Link>
           <Link to="/gallery">Gallery</Link>
           <Link to="/trivia">Trivia</Link>
+          <Link to="/leaderboard">Leaderboard</Link> {/* ✅ New link added */}
           <Link to="/message-board">Messages</Link>
           <Link to="/spotify">Spotify</Link>
         </nav>

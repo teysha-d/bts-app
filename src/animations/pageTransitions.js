@@ -1,24 +1,20 @@
 export const pageVariants = {
   initial: {
     opacity: 0,
-    y: 50,
-    scale: 0.95,
+    y: 30,
   },
   in: {
     opacity: 1,
     y: 0,
-    scale: 1,
   },
   out: {
     opacity: 0,
-    y: -50,
-    scale: 0.95,
+    y: -30,
   },
 };
 
 export const pageTransition = {
-  type: "spring",
-  stiffness: 50,
-  damping: 20,
-  duration: 0.5,
+  type: "tween",
+  ease: "anticipate",
+  duration: 0.6,
 };

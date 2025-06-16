@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { triviaQuestions } from "../../data/triviaData";
 import { pageVariants, pageTransition } from "../../animations/pageTransitions";
+import { triviaQuestions } from "../../data/triviaData";
 
 export default function Trivia() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
-  const [savedScore, setSavedScore] = useState(null);
-
-  useEffect(() => {
-    const storedScore = localStorage.getItem("btsTriviaScore");
-    if (storedScore) {
-      setSavedScore(storedScore);
-    }
-  }, []);
 
   const handleAnswer = (selectedOption) => {
     if (selectedOption === triviaQuestions[currentQuestion].answer) {
@@ -29,9 +21,20 @@ export default function Trivia() {
     }
   };
 
-  const handlePlayAgain = () => {
-    setSavedScore(score);
-    localStorage.setItem("btsTriviaScore", score);
+  const handleSaveScore = () => {
+    const existingScores =
+      JSON.parse(localStorage.getItem("btsTriviaLeaderboard")) || [];
+    const newEntry = { score, date: new Date().toLocaleString() };
+    existingScores.push(newEntry);
+    existingScores.sort((a, b) => b.score - a.score);
+    localStorage.setItem(
+      "btsTriviaLeaderboard",
+      JSON.stringify(existingScores)
+    );
+    resetGame();
+  };
+
+  const resetGame = () => {
     setScore(0);
     setCurrentQuestion(0);
     setShowScore(false);
@@ -46,22 +49,14 @@ export default function Trivia() {
       exit="out"
       transition={pageTransition}
     >
-      <h2>BTS Trivia</h2>
-
-      {savedScore !== null && (
-        <div className="previous-score">
-          <p>
-            Your previous saved score: {savedScore} / {triviaQuestions.length}
-          </p>
-        </div>
-      )}
+      <h2>BTS Trivia 🎤</h2>
 
       {showScore ? (
         <div className="score-section">
           <h3>
             You scored {score} out of {triviaQuestions.length}!
           </h3>
-          <button onClick={handlePlayAgain}>Save Score & Play Again</button>
+          <button onClick={handleSaveScore}>Save Score & Play Again</button>
         </div>
       ) : (
         <div className="question-section">

@@ -7,6 +7,7 @@ import Gallery from "../components/Pages/Gallery";
 import Trivia from "../components/Pages/Trivia";
 import MessageBoard from "../components/Pages/MessageBoard";
 import SpotifyBTS from "../components/Pages/SpotifyBTS";
+import Leaderboard from "../components/Pages/Leaderboard"; // ✅ new import
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -18,6 +19,8 @@ export default function AppRoutes() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/trivia" element={<Trivia />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />{" "}
+        {/* ✅ new route */}
         <Route path="/message-board" element={<MessageBoard />} />
         <Route path="/spotify" element={<SpotifyBTS />} />
       </Routes>

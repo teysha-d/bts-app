@@ -1,21 +1,27 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import Header from "./components/Layout/Header";
+import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
 import AppRoutes from "./routes/AppRoutes";
-import SplashScreen from "./components/Layout/SplashScreen";
-import { ThemeProvider } from "./context/ThemeContext";
-import "./styles/style.css";
+import Splash from "./components/Splash";
 
-export default function App() {
+function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1500);
+  }, []);
+
   return (
-    <ThemeProvider>
-      <SplashScreen />
-      <Router>
-        <Header />
-        <main>
+    <>
+      {loading ? (
+        <Splash />
+      ) : (
+        <>
+          <Header />
           <AppRoutes />
-        </main>
-      </Router>
-    </ThemeProvider>
+        </>
+      )}
+    </>
   );
 }
+
+export default App;
