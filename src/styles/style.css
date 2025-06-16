@@ -1,21 +1,10 @@
+/* Base App styles */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 body {
-  font-family: "Arial", sans-serif;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", "Arial", sans-serif;
   margin: 0;
   padding: 20px;
   background: linear-gradient(135deg, #f0e6f6, #dbc1f7);
@@ -28,50 +17,15 @@ body.dark {
   color: #f5f5f5;
 }
 
-nav {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.toggle-btn {
-  margin-left: auto;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 20px;
-  background-color: #b19cd9;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.toggle-btn:hover {
-  background-color: #9c83c4;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Global Layout Containers */
+.page-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+  padding: 20px;
 }
 
 /* Trivia Section */
@@ -88,33 +42,27 @@ nav {
   margin-top: 20px;
 }
 
-.options button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: none;
-  background-color: #b19cd9;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.options button:hover {
-  transform: scale(1.05);
-}
-
+.options button,
 .score-section button {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 10px;
   border: none;
-  background-color: #ff69b4;
   color: white;
   cursor: pointer;
-  margin-top: 20px;
   transition: transform 0.2s;
 }
 
+.options button {
+  background-color: #b19cd9;
+}
+
+.score-section button {
+  background-color: #ff69b4;
+  margin-top: 20px;
+}
+
+.options button:hover,
 .score-section button:hover {
   transform: scale(1.05);
 }
@@ -145,11 +93,14 @@ nav {
   aspect-ratio: 4 / 5;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
   transition: transform 0.3s, background-color 0.3s;
   display: flex;
   flex-direction: column;
+  margin: 20px;
+  padding: 20px;
 }
 
 .gallery-card img {
@@ -169,7 +120,7 @@ nav {
   text-align: center;
 }
 
-/* Profile Section */
+/* Member Profiles */
 .member-list {
   display: flex;
   flex-wrap: wrap;
@@ -181,11 +132,13 @@ nav {
 .member-card {
   width: 200px;
   padding: 15px;
-  background-color: #f8f8f8;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
   text-align: center;
   transition: background-color 0.3s;
+  margin: 20px;
 }
 
 .member-card img {
@@ -196,29 +149,25 @@ nav {
   margin-bottom: 10px;
 }
 
-/* Banner Photo */
-.banner-photo {
-  margin: 20px auto;
-  max-width: 1000px;
+/* Home & Message Cards */
+.home-card,
+.message-card,
+.score-section {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
   border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px;
+  transition: all 0.3s ease;
+  max-width: 600px;
 }
 
-.banner-photo img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-/* DARK MODE EXTENSIONS */
-body.dark .gallery-card {
-  background-color: #1e1e1e;
-}
-
-body.dark .member-card {
+body.dark .home-card,
+body.dark .message-card,
+body.dark .gallery-card,
+body.dark .member-card,
+body.dark .score-section {
   background-color: #1e1e1e;
 }
 
@@ -227,77 +176,66 @@ body.dark .member-card h3 {
   background-color: #9c83c4;
 }
 
-body.dark .score-section {
-  background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 15px;
-}
-
 body.dark .options button {
   background-color: #b19cd9;
 }
 
-.home-card,
-.message-card {
-  margin: 30px auto;
-  padding: 20px;
-  max-width: 600px;
-  background-color: #f8f8f8;
+/* Album Section */
+.album-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.album-card {
+  width: 200px;
+  padding: 10px;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
-}
-
-body.dark .home-card,
-body.dark .message-card {
-  background-color: #1e1e1e;
-}
-
-.splash-screen {
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #b19cd9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  font-size: 2rem;
-}
-
-.page-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 80vh;
-  padding: 20px;
-}
-
-.bts-logo {
-  width: 60px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.home-card,
-.message-card,
-.member-card,
-.gallery-card,
-.score-section {
   background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.album-card:hover {
+  transform: scale(1.05);
+}
+
+.album-card img {
+  width: 100%;
   border-radius: 15px;
-  padding: 20px;
-  margin: 20px;
+}
+
+/* Sticky Header / Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  padding: 10px 20px;
+}
+
+body.dark .navbar {
+  background: rgba(30, 30, 30, 0.8);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .bts-logo {
@@ -315,4 +253,75 @@ body.dark .message-card {
   50% {
     transform: translateY(-10px);
   }
+}
+
+.navbar-container h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #6e00b5;
+}
+
+.navigation {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navigation a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #6e00b5;
+  transition: transform 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #b19cd9;
+  transition: 0.3s;
+}
+
+.navigation a:hover {
+  transform: scale(1.1);
+  color: #b19cd9;
+}
+
+.navigation a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Responsive Nav */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navigation {
+    padding: 10px 0;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+/* Splash Screen */
+.splash-screen {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #b19cd9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 2rem;
 }

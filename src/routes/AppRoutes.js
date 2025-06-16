@@ -6,6 +6,7 @@ import Profile from "../components/Pages/Profile";
 import Gallery from "../components/Pages/Gallery";
 import Trivia from "../components/Pages/Trivia";
 import MessageBoard from "../components/Pages/MessageBoard";
+import SpotifyBTS from "../components/Pages/SpotifyBTS";
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -18,6 +19,7 @@ export default function AppRoutes() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/trivia" element={<Trivia />} />
         <Route path="/message-board" element={<MessageBoard />} />
+        <Route path="/spotify" element={<SpotifyBTS />} />
       </Routes>
     </AnimatePresence>
   );
