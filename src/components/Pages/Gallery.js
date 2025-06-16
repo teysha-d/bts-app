@@ -36,13 +36,13 @@ export default function Gallery() {
     { src: jungkook, title: "Jungkook" },
 
     // And now your new photos:
-    { src: photo9, title: "Extra 1" },
-    { src: photo10, title: "Extra 2" },
-    { src: photo11, title: "Extra 3" },
-    { src: photo12, title: "Extra 4" },
-    { src: photo13, title: "Extra 5" },
-    { src: photo14, title: "Extra 6" },
-    { src: photo15, title: "Extra 7" },
+    { src: photo9, title: "RM" },
+    { src: photo10, title: "Jin" },
+    { src: photo11, title: "Suga" },
+    { src: photo12, title: "J-Hope" },
+    { src: photo13, title: "Jimin" },
+    { src: photo14, title: "V" },
+    { src: photo15, title: "Jungkook" },
   ];
 
   const [current, setCurrent] = useState(0);
