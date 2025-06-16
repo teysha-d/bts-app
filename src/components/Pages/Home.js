@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { pageVariants, pageTransition } from "../../animations/pageTransitions";
-import groupPhoto from "../../images/bts1.jpg"; // adjust filename/path as needed
+import groupPhoto from "../../images/bts16.jpeg"; // adjust filename/path as needed
 
 export default function Home() {
   return (
