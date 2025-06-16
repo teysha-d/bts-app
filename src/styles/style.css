@@ -366,3 +366,12 @@ body.dark .quote-card {
 .quote-carousel button:hover {
   transform: scale(1.15);
 }
+
+.gallery-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: scale(1.05);
+}
