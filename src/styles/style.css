@@ -218,8 +218,10 @@ body.dark .quote-card {
 .quote-carousel button {
   background-color: #b19cd9;
   border: none;
-  padding: 12px 18px;
-  border-radius: 50%;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%; /* ensure perfect circle */
   color: white;
   font-size: 1.2rem;
   cursor: pointer;

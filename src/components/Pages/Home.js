@@ -1,7 +1,8 @@
+// src/components/Pages/Home.js
 import React from "react";
 import { motion } from "framer-motion";
 import { pageVariants, pageTransition } from "../../animations/pageTransitions";
-import QuoteCarousel from "../QuoteCarousel"; // <-- Add this import
+import groupPhoto from "../../images/bts-group.jpg"; // adjust filename/path as needed
 
 export default function Home() {
   return (
@@ -13,16 +14,32 @@ export default function Home() {
       exit="out"
       transition={pageTransition}
     >
-      <h2>💜 Welcome to the BTS Fan Club 💜</h2>
+      <h2>💜 Welcome to the BTS Fan App 💜</h2>
       <p>
         🎤 Explore member profiles, trivia games, photo galleries, and more!
       </p>
 
-      {/* Insert the Quote Carousel here */}
-      <QuoteCarousel />
-
+      {/* New group photo card */}
       <div className="home-card">
-        <h3>🎧 Stay tuned for more fan content, updates & fun!</h3>
+        <img
+          src={groupPhoto}
+          alt="BTS Group"
+          style={{
+            width: "100%",
+            height: "auto",
+            borderRadius: "15px",
+            display: "block",
+          }}
+        />
+      </div>
+
+      {/* Quote carousel (arrows made perfectly round in CSS) */}
+      <div className="quote-carousel">
+        <button onClick={() => /* prev logic */ null}>&lt;</button>
+        <div className="quote-card">
+          “Go on your path, even if you live for a day.” — Jimin
+        </div>
+        <button onClick={() => /* next logic */ null}>&gt;</button>
       </div>
     </motion.div>
   );

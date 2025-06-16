@@ -8,7 +8,7 @@ export default function Header() {
       <div className="navbar-container">
         <div className="logo-section">
           <img src={btsLogo} alt="BTS Logo" className="bts-logo" />
-          <h1>BTS Fan Club</h1>
+          <h1>BTS Fan App</h1>
         </div>
         <nav className="navigation">
           <Link to="/">Home</Link>
