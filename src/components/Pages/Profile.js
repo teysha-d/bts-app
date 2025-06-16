@@ -1,15 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { btsMembers } from "../../data/btsData";
+import { pageVariants, pageTransition } from "../../animations/pageTransitions";
 
 export default function Profile() {
   return (
     <motion.div
       className="profile"
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 50 }}
-      transition={{ duration: 0.5 }}
+      variants={pageVariants}
+      initial="initial"
+      animate="in"
+      exit="out"
+      transition={pageTransition}
     >
       <h2>Member Profiles</h2>
       <div className="member-list">

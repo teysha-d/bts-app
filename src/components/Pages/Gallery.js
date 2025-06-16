@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { galleryImages } from "../../data/galleryData";
+import { pageVariants, pageTransition } from "../../animations/pageTransitions";
 
 export default function Gallery() {
   const groupPhoto = galleryImages.find(
@@ -13,10 +14,11 @@ export default function Gallery() {
   return (
     <motion.div
       className="gallery"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.5 }}
+      variants={pageVariants}
+      initial="initial"
+      animate="in"
+      exit="out"
+      transition={pageTransition}
     >
       <h2>BTS Photo Gallery</h2>
 

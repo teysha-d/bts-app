@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { triviaQuestions } from "../../data/triviaData";
+import { pageVariants, pageTransition } from "../../animations/pageTransitions";
 
 export default function Trivia() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -8,7 +9,6 @@ export default function Trivia() {
   const [showScore, setShowScore] = useState(false);
   const [savedScore, setSavedScore] = useState(null);
 
-  // Load previous score from localStorage
   useEffect(() => {
     const storedScore = localStorage.getItem("btsTriviaScore");
     if (storedScore) {
@@ -40,10 +40,11 @@ export default function Trivia() {
   return (
     <motion.div
       className="trivia"
-      initial={{ opacity: 0, rotate: -5 }}
-      animate={{ opacity: 1, rotate: 0 }}
-      exit={{ opacity: 0, rotate: 5 }}
-      transition={{ duration: 0.5 }}
+      variants={pageVariants}
+      initial="initial"
+      animate="in"
+      exit="out"
+      transition={pageTransition}
     >
       <h2>BTS Trivia</h2>
 
