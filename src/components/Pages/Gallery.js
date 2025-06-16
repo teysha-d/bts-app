@@ -26,7 +26,7 @@ import { pageVariants, pageTransition } from "../../animations/pageTransitions";
 
 export default function Gallery() {
   const images = [
-    { src: groupPhoto, title: "BTS Group" },
+    { src: groupPhoto, title: "BTS" },
     { src: rm, title: "RM" },
     { src: jin, title: "Jin" },
     { src: suga, title: "Suga" },
