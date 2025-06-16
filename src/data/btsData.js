@@ -1,3 +1,11 @@
+import rmImg from "../images2/rm.jpg";
+import jinImg from "../images2/jin.jpg";
+import sugaImg from "../images2/suga.jpg";
+import jhopeImg from "../images2/jhope.jpg";
+import jiminImg from "../images2/jimin.jpg";
+import vImg from "../images2/v.jpg";
+import jkImg from "../images2/jungkook.jpg";
+
 export const btsMembers = [
   {
     id: 1,
@@ -5,7 +13,7 @@ export const btsMembers = [
     realName: "Kim Nam-joon",
     position: "Leader, Rapper",
     birthday: "September 12, 1994",
-    photo: "https://i.imgur.com/A1RMphoto.jpg", // Replace with real image URLs later
+    photo: rmImg,
   },
   {
     id: 2,
@@ -13,7 +21,7 @@ export const btsMembers = [
     realName: "Kim Seok-jin",
     position: "Vocalist, Visual",
     birthday: "December 4, 1992",
-    photo: "https://i.imgur.com/A1JINphoto.jpg",
+    photo: jinImg,
   },
   {
     id: 3,
@@ -21,7 +29,7 @@ export const btsMembers = [
     realName: "Min Yoon-gi",
     position: "Rapper",
     birthday: "March 9, 1993",
-    photo: "https://i.imgur.com/A1SUGAphoto.jpg",
+    photo: sugaImg,
   },
   {
     id: 4,
@@ -29,7 +37,7 @@ export const btsMembers = [
     realName: "Jung Ho-seok",
     position: "Rapper, Dancer",
     birthday: "February 18, 1994",
-    photo: "https://i.imgur.com/A1JHOPEphoto.jpg",
+    photo: jhopeImg,
   },
   {
     id: 5,
@@ -37,7 +45,7 @@ export const btsMembers = [
     realName: "Park Ji-min",
     position: "Vocalist, Dancer",
     birthday: "October 13, 1995",
-    photo: "https://i.imgur.com/A1JIMINphoto.jpg",
+    photo: jiminImg,
   },
   {
     id: 6,
@@ -45,7 +53,7 @@ export const btsMembers = [
     realName: "Kim Tae-hyung",
     position: "Vocalist",
     birthday: "December 30, 1995",
-    photo: "https://i.imgur.com/A1Vphoto.jpg",
+    photo: vImg,
   },
   {
     id: 7,
@@ -53,21 +61,6 @@ export const btsMembers = [
     realName: "Jeon Jung-kook",
     position: "Main Vocalist, Dancer",
     birthday: "September 1, 1997",
-    photo: "https://i.imgur.com/A1JKphoto.jpg",
+    photo: jkImg,
   },
-];
-
-export const btsAlbums = [
-  { id: 1, title: "Wings", year: 2016 },
-  { id: 2, title: "Love Yourself: Tear", year: 2018 },
-  { id: 3, title: "Map of the Soul: 7", year: 2020 },
-  { id: 4, title: "BE", year: 2020 },
-];
-
-export const btsSongs = [
-  { id: 1, title: "Blood Sweat & Tears", album: "Wings" },
-  { id: 2, title: "Fake Love", album: "Love Yourself: Tear" },
-  { id: 3, title: "ON", album: "Map of the Soul: 7" },
-  { id: 4, title: "Life Goes On", album: "BE" },
-  { id: 5, title: "Butter", album: "BE" },
 ];

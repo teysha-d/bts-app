@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { triviaQuestions } from "../../data/triviaData";
 
@@ -6,6 +6,15 @@ export default function Trivia() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  const [savedScore, setSavedScore] = useState(null);
+
+  // Load previous score from localStorage
+  useEffect(() => {
+    const storedScore = localStorage.getItem("btsTriviaScore");
+    if (storedScore) {
+      setSavedScore(storedScore);
+    }
+  }, []);
 
   const handleAnswer = (selectedOption) => {
     if (selectedOption === triviaQuestions[currentQuestion].answer) {
@@ -20,6 +29,14 @@ export default function Trivia() {
     }
   };
 
+  const handlePlayAgain = () => {
+    setSavedScore(score);
+    localStorage.setItem("btsTriviaScore", score);
+    setScore(0);
+    setCurrentQuestion(0);
+    setShowScore(false);
+  };
+
   return (
     <motion.div
       className="trivia"
@@ -29,20 +46,21 @@ export default function Trivia() {
       transition={{ duration: 0.5 }}
     >
       <h2>BTS Trivia</h2>
+
+      {savedScore !== null && (
+        <div className="previous-score">
+          <p>
+            Your previous saved score: {savedScore} / {triviaQuestions.length}
+          </p>
+        </div>
+      )}
+
       {showScore ? (
         <div className="score-section">
           <h3>
             You scored {score} out of {triviaQuestions.length}!
           </h3>
-          <button
-            onClick={() => {
-              setScore(0);
-              setCurrentQuestion(0);
-              setShowScore(false);
-            }}
-          >
-            Play Again
-          </button>
+          <button onClick={handlePlayAgain}>Save Score & Play Again</button>
         </div>
       ) : (
         <div className="question-section">
