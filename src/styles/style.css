@@ -267,3 +267,24 @@ body.dark .message-card {
   color: white;
   font-size: 2rem;
 }
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.bts-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #1e1e1e, #2c003e);
+  color: #f5f5f5;
+}

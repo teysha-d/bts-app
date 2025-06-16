@@ -5,24 +5,19 @@ import { pageVariants, pageTransition } from "../../animations/pageTransitions";
 export default function Home() {
   return (
     <motion.div
-      className="home"
+      className="page-container"
       variants={pageVariants}
       initial="initial"
       animate="in"
       exit="out"
       transition={pageTransition}
     >
-      <h2>💜 Welcome to the BTS Fan Club 💜</h2>
+      <h2>Welcome to the BTS Fan Club</h2>
       <p>
-        Join us as we celebrate BTS with profiles, trivia, galleries, and more!
+        🎤 Explore member profiles, trivia games, photo galleries, and more!
       </p>
       <div className="home-card">
-        <h3>🎤 Explore, Learn & Connect 🎤</h3>
-        <p>
-          Start with the navigation above to explore each section dedicated to
-          BTS.
-        </p>
-        <p>New features are always being added — so stay tuned!</p>
+        <h3>🎧 Stay tuned for more fan content, updates & fun!</h3>
       </div>
     </motion.div>
   );
