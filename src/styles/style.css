@@ -235,3 +235,19 @@ body.dark .score-section {
 body.dark .options button {
   background-color: #b19cd9;
 }
+
+.home-card,
+.message-card {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: #f8f8f8;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+body.dark .home-card,
+body.dark .message-card {
+  background-color: #1e1e1e;
+}
