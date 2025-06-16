@@ -428,3 +428,94 @@ body.dark .navbar {
   color: white;
   font-size: 2rem;
 }
+
+/* Center & resize the group photo */
+.gallery-group {
+  text-align: center;
+  margin: 30px 0;
+}
+.gallery-group-photo {
+  width: 300px;
+  max-width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.gallery-group-photo:hover {
+  transform: scale(1.03);
+}
+.gallery-group-title {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Carousel styles */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  width: 100%;
+  max-width: 700px;
+}
+
+.carousel-slide {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.carousel-slide img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.slide-title {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Nav buttons */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(177, 156, 217, 0.8);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+  z-index: 10;
+}
+.carousel-nav:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+.carousel-nav.prev {
+  left: -25px;
+}
+.carousel-nav.next {
+  right: -25px;
+}
+
+/* Make sure mobile is responsive */
+@media (max-width: 768px) {
+  .gallery-group-photo {
+    width: 200px;
+  }
+  .carousel-nav.prev {
+    left: 5px;
+  }
+  .carousel-nav.next {
+    right: 5px;
+  }
+}

@@ -1,3 +1,4 @@
+// src/components/Pages/Gallery.js
 import React, { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -13,9 +14,6 @@ import { motion } from "framer-motion";
 import { pageVariants, pageTransition } from "../../animations/pageTransitions";
 
 export default function Gallery() {
-  const [open, setOpen] = useState(false);
-  const [photoIndex, setPhotoIndex] = useState(0);
-
   const images = [
     { src: groupPhoto, title: "BTS Group" },
     { src: rm, title: "RM" },
@@ -27,10 +25,16 @@ export default function Gallery() {
     { src: jungkook, title: "Jungkook" },
   ];
 
-  const openLightbox = (index) => {
-    setPhotoIndex(index);
-    setOpen(true);
+  const [current, setCurrent] = useState(0);
+  const [open, setOpen] = useState(false);
+
+  const prev = () => {
+    setCurrent((i) => (i === 0 ? images.length - 1 : i - 1));
   };
+  const next = () => {
+    setCurrent((i) => (i === images.length - 1 ? 0 : i + 1));
+  };
+  const openLightbox = () => setOpen(true);
 
   return (
     <motion.div
@@ -42,24 +46,41 @@ export default function Gallery() {
       transition={pageTransition}
     >
       <h2>BTS Photo Gallery 📸</h2>
-      <div className="gallery-grid">
-        {images.map((item, index) => (
-          <div
-            key={index}
-            className="gallery-card"
-            onClick={() => openLightbox(index)}
-          >
-            <img src={item.src} alt={item.title} />
-            <h3>{item.title}</h3>
-          </div>
-        ))}
+
+      {/* Centered Group Photo */}
+      <div className="gallery-group">
+        <img
+          src={groupPhoto}
+          alt="BTS Group"
+          className="gallery-group-photo"
+          onClick={openLightbox}
+          role="button"
+        />
+        <p className="gallery-group-title">BTS Group</p>
       </div>
 
+      {/* Carousel */}
+      <div className="carousel-container">
+        <button className="carousel-nav prev" onClick={prev}>
+          ‹
+        </button>
+
+        <div className="carousel-slide" onClick={openLightbox}>
+          <img src={images[current].src} alt={images[current].title} />
+          <p className="slide-title">{images[current].title}</p>
+        </div>
+
+        <button className="carousel-nav next" onClick={next}>
+          ›
+        </button>
+      </div>
+
+      {/* Lightbox */}
       {open && (
         <Lightbox
           open={open}
           close={() => setOpen(false)}
-          index={photoIndex}
+          index={current}
           slides={images.map((img) => ({ src: img.src, alt: img.title }))}
         />
       )}
