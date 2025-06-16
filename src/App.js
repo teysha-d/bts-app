@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
-import Header from "./components/Header";
-import AppRoutes from "./routes/AppRoutes";
+import { BrowserRouter as Router } from "react-router-dom";
 import Splash from "./components/Splash";
+import AppRoutes from "./routes/AppRoutes";
+import Header from "./components/Header";
+import "./styles/style.css";
 
-function App() {
-  const [loading, setLoading] = useState(true);
+export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1500);
+    const timer = setTimeout(() => setShowSplash(false), 2500);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <>
-      {loading ? (
+    <Router>
+      {showSplash ? (
         <Splash />
       ) : (
         <>
@@ -20,8 +23,6 @@ function App() {
           <AppRoutes />
         </>
       )}
-    </>
+    </Router>
   );
 }
-
-export default App;
